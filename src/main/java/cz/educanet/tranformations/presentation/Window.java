@@ -21,14 +21,9 @@ public class Window extends JFrame {
         root.add(canvas);
 
         add(root);
+        canvas.repaint();
 
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                canvas.repaint();
-            }
-        }, 0, 200);
+
+
     }
-
 }

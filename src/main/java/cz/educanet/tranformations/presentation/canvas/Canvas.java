@@ -20,8 +20,9 @@ public class Canvas extends JPanel {
     private int cellHeight;
 
     public Canvas() {
-        setBackground(Color.BLACK);
 
+        setBackground(Color.BLACK);
+        setSize(800, 600);
         addMouseListener(new CanvasMouseListener((x, y, button) -> {
             Coordinate c = new Coordinate(x / cellWidth, y / cellHeight);
 
@@ -29,6 +30,8 @@ public class Canvas extends JPanel {
                 screenManager.select(c);
             else
                 screenManager.unselect(c);
+
+            this.repaint();
         }));
     }
 
